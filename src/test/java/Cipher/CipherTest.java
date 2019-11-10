@@ -7,34 +7,51 @@ import static org.junit.Assert.*;
 public class CipherTest {
 
 
-//    @Test
-//    public void accessToPrivates_callBacks_get(){
-//        Cipher encrypt = new Cipher("Something", "Nothing");
-//        assertEquals("Something" , encrypt.getEncryptText());
-//        assertEquals("Nothing", encrypt.getDecrypt());
-//    }
-
-    @Test
- public void accessToEncrypt_callBacks_getEncrypt(){
-            Cipher cipher=new Cipher();
-        cipher.setEncryptText("hello");
-        String expected = "hello";
-        assertEquals(expected,cipher.getEncryptText());
-    }
 
     @Test
     public void accessToDecrypt_callBacks_getDecrypt(){
         Cipher cipher = new Cipher();
-        cipher.setDecryptText("bye");
+        cipher.setmResultString("bye");
         String expected = "bye";
-        assertEquals(expected, cipher.getDecryptText());
+        assertEquals(expected, cipher.getResultString());
     }
 
     @Test
     public void inputCeasar_stringInput_string(){
         Cipher testInput = new Cipher();
-        String expected = "Lipps";
-        assertEquals(expected, testInput.doCaesarCipher("Hello", 4));
+        String expected = "Efip";
+        assertEquals(expected, testInput.EncryptCaesarCipher("Abel", 4));
     }
 
+    @Test
+    public void ceaserCipher_allowsUppercaseInput_string() {
+        Cipher testCeaserCipher = new Cipher();
+        String expectedOutput = new String();
+        expectedOutput = "EFIP";
+        assertEquals(expectedOutput, testCeaserCipher.EncryptCaesarCipher("ABEL", 4));
+    }
+
+    @Test
+    public void ceaserCipher_doesEncryption_string() {
+        Cipher testCeaserCipher = new Cipher();
+        String expectedOutput = new String();
+        expectedOutput = "efip";
+        assertEquals(expectedOutput, testCeaserCipher.EncryptCaesarCipher("abel", 4));
+
+    }
+
+    @Test
+    public void ceaserCipher_doesDecryption_string() {
+        Cipher testCeaserCipher =  new Cipher();
+        String expectedOutput = new String();
+        expectedOutput = "abel";
+        assertEquals(expectedOutput, testCeaserCipher.DecryptCeasarCipher("efip", 4));
+    }
+
+    @Test
+    public void unDoCeaserCipher_takesInUppercaseLetters_string() {
+        Cipher testCeaserCipher = new Cipher();
+        String expectedOutput = "ABEL";
+        assertEquals(expectedOutput, testCeaserCipher.DecryptCeasarCipher("EFIP", 4));
+    }
 }
