@@ -4,11 +4,11 @@
 ## Description
 This is application is called Caesar Cipher. It encrypts letters by substitution method. It substitutes a letter with a certain shiftIndex. 
 
-shift letter A to index of 1
+### shift letter A to index of 1
 
-input: a
+#### input: a
 
-output: b
+#### output: b
 
 ## Setup/Installation Requirements
 * Install JDK 
@@ -22,10 +22,10 @@ There are no known bugs for this web application
 * Java
 * Intellij IDE
 ## Support and contact details
-Github: Abel-b
-Email: abelberhane011@gmail.com
+* Github: Abel-b
+* Email: abelberhane011@gmail.com
 
 ## LICENSE
 MIT license
 
-#####Copyright (c) {2019} **Abel B.**
+##### Copyright (c) {2019} **Abel B.**
