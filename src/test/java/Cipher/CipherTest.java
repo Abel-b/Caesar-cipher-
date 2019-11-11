@@ -35,8 +35,8 @@ public class CipherTest {
     public void ceaserCipher_doesEncryption_string() {
         Cipher testCeaserCipher = new Cipher();
         String expectedOutput = new String();
-        expectedOutput = "efip";
-        assertEquals(expectedOutput, testCeaserCipher.EncryptCaesarCipher("abel", 4));
+        expectedOutput = "ij";
+        assertEquals(expectedOutput, testCeaserCipher.EncryptCaesarCipher("hi", 1));
 
     }
 

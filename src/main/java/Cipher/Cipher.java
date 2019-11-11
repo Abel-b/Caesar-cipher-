@@ -2,11 +2,11 @@ package Cipher;
 
 
 public class Cipher {
-    private StringBuffer mResult = new StringBuffer();
-    private String mResultString = new String();
+    private static StringBuffer mResult = new StringBuffer();
+    private static String mResultString = new String();
 
 
-    public String EncryptCaesarCipher(String wordToEncrypt, int shiftIndex) {
+    public static String EncryptCaesarCipher(String wordToEncrypt, int shiftIndex) {
         for (int i = 0; i < wordToEncrypt.length(); i++) {
             if (Character.isUpperCase(wordToEncrypt.charAt(i))) {
                 char chart = (char) (((int) wordToEncrypt.charAt(i) + shiftIndex - 65) % 26 + 65);
@@ -21,7 +21,7 @@ public class Cipher {
         }
             return mResultString;
     }
-    public String DecryptCeasarCipher(String wordToDecrypt, int shitIndex){
+    public static String DecryptCeasarCipher(String wordToDecrypt, int shitIndex){
         return EncryptCaesarCipher(wordToDecrypt, 26 - shitIndex );
     }
 
